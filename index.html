@@ -9,18 +9,24 @@
 	            background-image:url("beijing.jpg");
       	        background-repeat:no-repeat;
       	        background-size:cover;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
             }
             .kuang{
-                margin: auto;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .kuang div img {
-                height: 80%;
-                width: 60%;
                 display: flex;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: center;
                 align-items: center;
+                gap: 20px;
+                max-width: 800px;
+            }
+            .kuang img {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
             }
             .button1{
                 width: 200px;
@@ -34,11 +40,10 @@
                 cursor: pointer;
                 font-size: 18px;
             }
-            wz{
+            a{
                 text-decoration: none;
                 color: #fff;
             }
-
         </style>
     </head>
     <body>
@@ -47,7 +52,7 @@
             <img  src="tu2.jpg"/>
             <img  src="tu3.jpg"/>
             <img  src="tu4.jpg"/>
-            <div class="button1"><wz href="https://tieba.baidu.com//">返回首页</wz></div>
+            <div class="button1" ><a href="https://odds200.github.io/odds2000/">返回首页</a></div>
           </div>
     </body>
 </html>
