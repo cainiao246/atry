@@ -14,25 +14,37 @@
                 justify-content: center;
                 align-items: center;
             }
+            #view_div {
+                width: 1024px;
+                padding: 20px;
+                height: 550px;
+                margin: 0 auto;
+                background-image: url('tu1.jpg');
+                background-size: 100% 100%;
+            }
             .kuang{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-                max-width: 800px;
-            }
-            .kuang img {
-                width: 100%;
+                width: 1024px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 10px;
                 height: auto;
-                max-height: 400px;
-                object-fit: contain;
             }
-            .button1{
+            .kuang img{
+                width: 20%;
+                height: 20%;
+                cursor: pointer;
+            }
+            .anniu{
+                width: 1024px;
+                height: 50px;
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
                 width: 200px;
                 height: 50px;
                 background-color: #333;
-                color: #fff;
                 border-radius: 5px;
                 display: flex;
                 justify-content: center;
@@ -40,19 +52,26 @@
                 cursor: pointer;
                 font-size: 18px;
             }
-            a{
-                text-decoration: none;
-                color: #fff;
-            }
         </style>
+        <script type="text/javascript">
+            function setImage(id){
+            document.getElementById("view_div").style.backgroundImage = "url('tu"+id+".jpg')";
+          }
+        
+        </script>
     </head>
+    
     <body>
+          <div id="view_div"></div>
           <div class="kuang">
-            <img  src="tu1.jpg"/>
-            <img  src="tu2.jpg"/>
-            <img  src="tu3.jpg"/>
-            <img  src="tu4.jpg"/>
-            <div class="button1" ><a href="https://odds200.github.io/odds2000/">返回首页</a></div>
+            <img  src="tu1.jpg" onclick="setImage(1)"/>
+            <img  src="tu2.jpg" onclick="setImage(2)"/>
+            <img  src="tu3.jpg" onclick="setImage(3)"/>
+            <img  src="tu4.jpg" onclick="setImage(4)"/>
+            
           </div>
+          <div class="anniu">
+            <a href="https://odds200.github.io/odds2000/">返回首页</a>
+        </div>
     </body>
 </html>
