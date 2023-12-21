@@ -9,35 +9,56 @@
 	            background-image:url("beijing.jpg");
       	        background-repeat:no-repeat;
       	        background-size:cover;
+                
+            }
+            .view_div {
+                border: 1px solid black;
+                width: 579px;
+                height: 521px;
+                margin: 50px auto 50px auto;
+                overflow: hidden;
+                position: relative;
+            }
+            img{
+                width: 579px;
+                height: 521px;
+            }
+            #kuang{
+                width: 2316px;
+                height: 521px;
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: 1;
+                transition: all 1s ease;
             }
-            #view_div {
-                width: 1024px;
-                padding: 20px;
-                height: 550px;
-                margin: 0 auto;
-                background-image: url('tu1.jpg');
-                background-size: 100% 100%;
-            }
-            .kuang{
-                width: 1024px;
-                margin: 0 auto;
-                text-align: center;
-                padding: 10px;
-                height: auto;
-            }
-            .kuang img{
-                width: 20%;
-                height: 20%;
+            .btn{
+                position: absolute;
+                top: 45%;
+                width: 50px;
+                height: 50px;
+                z-index: 2;
+                
                 cursor: pointer;
             }
+            #leftbtn{
+                left: 0px;
+                
+                color: rgb(255, 0, 0);
+            }
+            #rightbtn{
+                right: 0px;
+                
+                color: rgb(255, 0, 0);
+            }
             .anniu{
-                width: 1024px;
+                width: auto;
                 height: 50px;
                 text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             a{
                 text-decoration: none;
@@ -53,23 +74,40 @@
                 font-size: 18px;
             }
         </style>
+
         <script type="text/javascript">
-            function setImage(id){
-            document.getElementById("view_div").style.backgroundImage = "url('tu"+id+".jpg')";
-          }
-        
+            var index = 0;
+            window.onload = function(){
+            document.getElementById("leftbtn").onclick = function(){
+            index--;
+            if(index < 0){
+               index = 0;
+            }
+            document.getElementById("kuang").style.left = -(index*579)+"px";
+            }
+            document.getElementById("rightbtn").onclick = function(){
+            index++;
+            if(index > 3){
+               index = 3;
+            }
+            document.getElementById("kuang").style.left = -(index*579)+"px";
+            }
+            }
         </script>
     </head>
     
     <body>
-          <div id="view_div"></div>
-          <div class="kuang">
-            <img  src="tu1.jpg" onclick="setImage(1)"/>
-            <img  src="tu2.jpg" onclick="setImage(2)"/>
-            <img  src="tu3.jpg" onclick="setImage(3)"/>
-            <img  src="tu4.jpg" onclick="setImage(4)"/>
-            
-          </div>
+        <div class="view_div">
+            <div id="leftbtn" class="btn"><p>上一张</p></div>
+            <div id="kuang">
+                <div><img  src="tu1.jpg" /></div>
+                <div><img  src="tu2.jpg" /></div>
+                <div><img  src="tu3.jpg" /></div>
+                <div><img  src="tu4.jpg" /></div>
+            </div>
+            <div id="rightbtn" class="btn"><p>下一张</p></div>
+        </div>
+          
           <div class="anniu">
             <a href="https://odds200.github.io/odds2000/">返回首页</a>
         </div>
