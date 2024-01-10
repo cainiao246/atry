@@ -75,24 +75,26 @@
             }
         </style>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
             var index = 0;
-            window.onload = function(){
-            document.getElementById("leftbtn").onclick = function(){
-            index--;
-            if(index < 0){
-               index = 0;
-            }
-            document.getElementById("kuang").style.left = -(index*579)+"px";
-            }
-            document.getElementById("rightbtn").onclick = function(){
-            index++;
-            if(index > 3){
-               index = 3;
-            }
-            document.getElementById("kuang").style.left = -(index*579)+"px";
-            }
-            }
+      $(document).ready(function() {
+        $("#leftbtn").click(function() {
+          index--;
+          if (index < 0) {
+            index = 0;
+          }
+          $("#kuang").animate({ left: -(index * 579) + "px" }, "slow");
+        });
+
+        $("#rightbtn").click(function() {
+          index++;
+          if (index > 3) {
+            index = 3;
+          }
+          $("#kuang").animate({ left: -(index * 579) + "px" }, "slow");
+        });
+      });
         </script>
     </head>
     
