@@ -7,8 +7,7 @@
         <style type="text/css">
             body {
 	            background-image:url("beijing.jpg");
-      	        background-repeat:no-repeat;
-      	        background-size:cover;
+      	        background-size:100%
                 
             }
             .view_div {
@@ -34,23 +33,32 @@
                 transition: all 1s ease;
             }
             .btn{
-                position: absolute;
+                position: relative;
                 top: 45%;
-                width: 50px;
+                width: 200px;
                 height: 50px;
                 z-index: 2;
-                
                 cursor: pointer;
+                text-decoration: none;
+                color: #fff;
+                background-color: #3a3636;
+                border-radius: 5px;
+                margin: 0 20px;
             }
             #leftbtn{
                 left: 0px;
-                
-                color: rgb(255, 0, 0);
             }
             #rightbtn{
                 right: 0px;
-                
-                color: rgb(255, 0, 0);
+            }
+            #kuang1{
+                margin: 0 auto;
+                width: 200px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                margin-top: 5px;
+                margin-bottom: 50px;
             }
             .anniu{
                 width: auto;
@@ -100,16 +108,20 @@
     
     <body>
         <div class="view_div">
-            <div id="leftbtn" class="btn"><p>上一张</p></div>
             <div id="kuang">
                 <div><img  src="tu1.jpg" /></div>
                 <div><img  src="tu2.jpg" /></div>
                 <div><img  src="tu3.jpg" /></div>
                 <div><img  src="tu4.jpg" /></div>
             </div>
+            
+        </div>
+        <div id="kuang1">
+            <div id="leftbtn" class="btn"><p>上一张</p></div>
             <div id="rightbtn" class="btn"><p>下一张</p></div>
         </div>
-          
+            
+
           <div class="anniu">
             <a href="https://odds200.github.io/odds2000/">返回首页</a>
         </div>
